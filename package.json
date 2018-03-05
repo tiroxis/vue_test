@@ -9,7 +9,9 @@
   "author": "REGRU LLC",
   "license": "ISC",
   "dependencies": {
-    "vue": "^2.4.4"
+    "vue": "^2.4.4",
+    "vue-resource": "^1.4.0",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -17,10 +19,16 @@
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-stage-2": "^6.24.1",
+    "breakpoint-sass": "^2.7.1",
+    "compass-sass-mixins": "^0.12.7",
     "css-loader": "^0.28.7",
     "html-webpack-plugin": "^2.30.1",
     "html-webpack-template": "^5.6.0",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.7",
+    "susy": "^3.0.3",
     "vue-loader": "^13.0.5",
+    "vue-router": "^3.0.1",
     "vue-template-compiler": "^2.4.4",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.8.2"

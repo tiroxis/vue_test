@@ -18,20 +18,51 @@ module.exports = {
             resolve('./src/'),
             resolve('./node_modules'),
         ],
+        alias: {
+            '@' : resolve('./src/')
+        }
     },
 
     module: {
         rules: [
             {
                 test: /\.vue$/,
-                use: 'vue-loader',
+                use: [{
+                    loader: 'vue-loader',
+                    options: {
+                        loaders: {
+                            scss: 'vue-style-loader!css-loader!sass-loader?' +
+                            JSON.stringify({
+                                "includePaths":[
+                                    resolve('./assets/scss'),
+                                    resolve('./node_modules/compass-sass-mixins/lib'),
+                                ]
+                            })
+                        }
+                    }
+                }]
             },
 
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 use: 'babel-loader',
-            }
+            },
+
+            {
+                test: /\.scss$/,
+                use: [{
+                    loader : 'sass-loader',
+                    options: {
+                        includePaths : [
+                            resolve('./assets/scss'),
+                            resolve('./node_modules/compass-sass-mixins/lib'),
+                        ]
+                    }
+                }],
+
+            },
+
         ],
     },
 
